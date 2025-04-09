@@ -2,7 +2,7 @@
 Utilities to create HTML for model cards.
 """
 # Standard Library Imports
-import os
+import importlib.resources as pkg_resources
 import re
 
 # Third-party Imports
@@ -27,7 +27,7 @@ def load_css_as_text(path: str) -> str:
     return css_content
 
 # Initialise model card's CSS styles
-MODEL_CARD_CSS_STYLES_TEXT = load_css_as_text(os.path.join("model_card_printer", "utils", "model_card_style.css"))
+MODEL_CARD_CSS_STYLES_TEXT = load_css_as_text(pkg_resources.files("model_card_printer.utils").joinpath("model_card_style.css").__str__())
 
 def css_selector(element_selector: str, css_text: str) -> str:
     """
