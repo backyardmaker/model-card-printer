@@ -1,0 +1,66 @@
+/*
+CSS styles for model card HTML
+*/
+
+/* Style for documentation content */
+/* Body style for dark mode (default) */
+.body-dark-mode {
+    background-color: #252525;  /* Dark grey background */
+    color: #d9d9d9;  /* Light grey text */
+    font-family: Arial, sans-serif; /* Font type */
+}
+
+.body-light-mode {
+    background-color: #ffffff; /* Light background */
+    color: #333333; /* Dark text for good contrast */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Container class for visuals in a collection */
+.div-container-visualcollection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 10px;
+    border: 0.5px solid lightgrey;
+    gap: 5px;
+    margin: 20px;
+    padding: 15px;
+    position: relative;
+}
+
+/* div class for visual of visualcollection */
+.div-visual-in-container {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    max-height: 300px;
+    min-width: 100px;
+    max-width: 400px;
+}
+
+/* div class for headers of visualcollection */
+.div-text-visualcollection {
+    grid-column: 1 / 4;
+}
+
+/* div class for text content */
+.div-textcontent {
+    border-radius: 10px;
+    border: 0.5px solid lightgrey;
+    margin: 20px;
+    padding: 15px;
+}
+
+/* div class for custom visual */
+.div-custom-visual {
+    height: auto;
+    max-height: 500px;
+    min-width: 100px;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 0.5px solid lightgrey;
+    justify-content: center;
+}

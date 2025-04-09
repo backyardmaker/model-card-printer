@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools >= 75.1.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "model-card-printer"
+version = "0.1.0"
+requires-python = ">=3.9"
+dependencies = [
+    "beautifulsoup4==4.13.3",
+    "bs4==0.0.2",
+    "ipython==8.31.0",
+    "markdown==3.7",
+    "numpy==2.1.3",
+    "pandas==2.2.3",
+    "plotly==6.0.1",
+    "pytest==8.3.4",
+    "pytest-cov==6.0.0",
+    "shap==0.47.1"
+]
+authors = [
+    {name = "Daniel Ng", email = "ngdanieljr@gmail.com"}
+]
+maintainers = [
+    {name = "Daniel Ng", email = "ngdanieljr@gmail.com"}
+]
+description = "A streamlined approach to model card generation for machine learning models"
+readme = {file = "README.md", content-type = "text/markdown"}
+license = "Apache-2.0"
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+
+  "Intended Audience :: Developers",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+keywords = ["model card", "card", "model", "model documentation", "ml documentation", "ml model", "ml model documentation"]
+
+[project.optional-dependencies]
+shap = [
+    "numpy==2.1.3",
+    "pandas==2.2.3",
+    "plotly==6.0.1",
+    "shap==0.47.1"
+]
+
+[project.urls]
+Repository = "https://github.com/backyardmaker/model-card-printer.git"
+
+[tool.pytest.ini_options]
+minversion = "8.0.0"
+addopts = "--cov=. --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.coverage.report]
+fail_under = 100
+show_missing = true
