@@ -4,12 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "model-card-printer"
-version = "0.1.0"
+version = "0.1.1"
 requires-python = ">=3.9"
 dependencies = [
     "beautifulsoup4==4.13.3",
     "bs4==0.0.2",
     "ipython==8.31.0",
+    "ipywidgets==8.1.5",
     "markdown==3.7",
     "numpy==2.1.3",
     "pandas==2.2.3",
@@ -25,7 +26,7 @@ maintainers = [
     {name = "Daniel Ng", email = "ngdanieljr@gmail.com"}
 ]
 description = "A streamlined approach to model card generation for machine learning models"
-readme = {file = "README.md", content-type = "text/markdown"}
+readme = {file = "README-pypi.md", content-type = "text/markdown"}
 license = "Apache-2.0"
 classifiers = [
   "Development Status :: 5 - Production/Stable",
@@ -50,6 +51,11 @@ shap = [
 
 [project.urls]
 Repository = "https://github.com/backyardmaker/model-card-printer.git"
+
+[tool.setuptools.package-data]
+"model_card_printer.utils" = ["model_card_style.css"]
+"model_card_printer" = ["documentation/images/demo_model_card.png"]
+
 
 [tool.pytest.ini_options]
 minversion = "8.0.0"
