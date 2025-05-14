@@ -125,7 +125,8 @@ def generate_beeswarm_plotly_figure(shap_values: shap._explanation.Explanation,
                                               value_name = "feature_value")
 
     # Store feature values' percentile inside melted explainer dataframe
-    melted_explainer_df["percentile_range_label"] = melted_explainer_df.apply(lambda row: label_percentile_range(row, explainer_df.describe().to_dict()), axis = 1)
+    explainer_stats_dict = explainer_x_df.describe().to_dict()
+    melted_explainer_df["percentile_range_label"] = melted_explainer_df.apply(lambda row: label_percentile_range(row, explainer_stats_dict), axis = 1)
 
     # Convert "percentile_range_label" column into categorical column
     melted_explainer_df["percentile_range_label"] = pd.Categorical(melted_explainer_df["percentile_range_label"], categories = ["<25%", "25-50%", "50-75%", ">75%"])
